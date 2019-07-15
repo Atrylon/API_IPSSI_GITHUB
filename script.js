@@ -45,7 +45,9 @@ function getOrgName(){
                      // console.log(data);
                      data.forEach(repos => {
                          p.innerHTML += `<li><span id="star"><a href="`+repos.html_url+`" target="_blank">`+repos.name+`</a> <img src="https://i1.wp.com/cours-galilee.com/wp-content/uploads/2018/12/star.png?ssl=1">`+repos.stargazers_count+`</span>`+repos.description+`</li>` ;
-                     })
+                     });
+
+                     p.innerHTML += '</ul>';
                  })
                  .catch(function(response) {
                      const errorMessage = document.createElement('marquee');
@@ -53,13 +55,10 @@ function getOrgName(){
                      app.appendChild(errorMessage);
                  });
 
-                 setTimeout(function(){
-                     p.innerHTML += '</ul>';
-                     container.appendChild(card);
-                     card.appendChild(avatar);
-                     card.appendChild(h1);
-                     card.appendChild(p);
-                 }, 500);
+                 container.appendChild(card);
+                 card.appendChild(avatar);
+                 card.appendChild(h1);
+                 card.appendChild(p);
 
             })
          })
