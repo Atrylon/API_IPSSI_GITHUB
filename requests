@@ -1,0 +1,15 @@
+https://api.github.com/orgs/{org_name}
+
+-------------------------
+
+https://api.github.com/orgs/{org_name}/members
+
+------------------------------
+
+https://api.github.com/users/{user_name}/repos
+
+?per_page=5
+
+-----------------------------
+
+https://api.github.com/repos/{user_name}/{repo_name}
