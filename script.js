@@ -29,6 +29,7 @@ function getOrgName(){
 
                 const h1 = document.createElement('h1');
                 h1.textContent = members.login;
+                h1.onclick = showMember(members.login);
 
                 const avatar = document.createElement('img');
                 avatar.src = members.avatar_url;
@@ -42,9 +43,12 @@ function getOrgName(){
                      return response.json();
                  })
                  .then(function(data) {
-                     // console.log(data);
                      data.forEach(repos => {
-                         p.innerHTML += `<li><span id="star"><a href="`+repos.html_url+`" target="_blank">`+repos.name+`</a> <img src="https://i1.wp.com/cours-galilee.com/wp-content/uploads/2018/12/star.png?ssl=1">`+repos.stargazers_count+`</span>`+repos.description+`</li>` ;
+                         p.innerHTML += `<li><span id="star"><a href="`+repos.html_url+`" target="_blank">`+repos.name+`</a> 
+                            <img src="https://i1.wp.com/cours-galilee.com/wp-content/uploads/2018/12/star.png?ssl=1">`+repos.stargazers_count+`
+                             <img src="https://static.oschina.net/uploads/img/201608/05104501_998X.png">`+repos.forks_count+`</span>`
+                             +repos.description+
+                             `</li>` ;
                      });
 
                      p.innerHTML += '</ul>';
@@ -76,3 +80,9 @@ function resetMemberList(){
 }
 
 
+function showMember(member){
+    resetMemberList();
+
+
+
+}
